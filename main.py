@@ -4,10 +4,10 @@ from lib import crossover, evaluate, gen_population, select, mutation
 
 if __name__ == '__main__':
 
-    num_population = 5
-    num_question = 3
     answer = [1, 2, 3]
+    num_question = len(answer)
     num_survive = 3
+    num_population = 5
 
     population = gen_population(num_population, num_question, (min(answer), max(answer)))
     score_dict = {idx:sum(evaluate(answer, result)) for idx, result in population.items()}
